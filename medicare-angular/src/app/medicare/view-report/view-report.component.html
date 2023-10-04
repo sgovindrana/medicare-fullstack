@@ -1,0 +1,150 @@
+<form [formGroup]="itemForm" (submit)="onSubmit()">
+    <div class="form-row">
+      <h2 class="col-lg-12"> <b>Patient Report</b></h2>
+    
+      <div class=" col-lg-12 alert  alert-success" *ngIf="Diag1Av == null"> Report under process. Please wait for an update. </div>
+
+      <div class="col-lg-12 mb-2">
+        <label for="title"><b>Hospital Name : </b></label>
+        <input type="text" class="form-control" id="hospitalName" formControlName="hospitalName">
+      
+      </div>
+<div>
+    <span>
+      <span class=" float-left">
+        <label for="title"><b>Doctor Name : </b></label>
+        {{this.medicalTestHistory.reqDoctorId.firstName}} {{this.medicalTestHistory.reqDoctorId.lastName}}
+      
+      </span>
+      <span style = "margin-left: 672px;" >
+        <label for="title"><b>Patient Name : </b></label>
+        {{this.medicalTestHistory.reqPatientId.firstName}} {{this.medicalTestHistory.reqPatientId.lastName}}
+      
+      </span> </span>
+</div><br><br>
+      <div class="col-lg-12 mb-2">
+        <label for="title"><b>Medicare Service : </b></label>
+        <input type="text" class="form-control" id="mymedicareService" formControlName="mymedicareService">
+      
+      </div>
+
+      <div class="col-lg-6 mb-2">
+        <label for="title"><b>Service Description : </b></label>
+        <input type="text" class="form-control" id="serviceDescription" formControlName="serviceDescription">
+      
+      </div>
+
+      <div class="col-lg-6 mb-2">
+        <label for="title"><b>Amount : </b></label>
+        <input type="text" class="form-control" id="amount" formControlName="amount">
+      
+      </div>
+
+  
+      <div class="col-lg-6 mb-2">
+        <label for="title"><b>Patient Age : </b></label>
+        <input type="text" class="form-control" id="age" formControlName="age">
+        
+        </div>
+
+        <div class="col-lg-6 mb-2">
+          <label for="title"><b>Patient Date of Birth : </b></label>
+          <input type="text" class="form-control" id="dateOfBirth" formControlName="dateOfBirth">
+          
+          </div>
+
+          <div class="col-lg-6 mb-2">
+            <label for="title"><b>Patient Contact Number : </b></label>
+            <input type="text" class="form-control" id="contact" formControlName="contact">
+            
+            </div> 
+
+            
+          <div class="col-lg-6 mb-2">
+            <label for="title"><b>Patient Address Line 1 : </b></label>
+            <input type="text" class="form-control" id="pataddress1" formControlName="pataddress1">
+            
+            </div> 
+
+            <div class="col-lg-6 mb-2">
+              <label for="title"><b>Patient Address Line 2 : </b></label>
+              <input type="text" class="form-control" id="pataddress2" formControlName="pataddress2">
+              
+              </div>  
+
+ 
+
+      <div class="col-lg-6 mb-2">
+      <label for="title"><b>Service Date : </b></label>
+      <input type="text" class="form-control" id="serviceDate" formControlName="serviceDate">
+      
+      </div>
+  
+      <!-- <div class="col-lg-6 col-md-6" *ngIf="Diag1Av == null ">
+        <label for="Diag1Av"><b>First Diagonosis Actual Value </b></label>
+        <input type="text" placeholder="report under process">
+      
+      </div> -->
+
+      <div class="col-lg-6 col-md-6">
+        <label for="Diag1Av"><b>First Diagonosis Actual Value </b></label>
+        <input type="text" class="form-control" id="Diag1Av" formControlName="Diag1Av">
+      
+      </div>
+  
+     
+      <div class="col-lg-6">
+        <label for="diag1Nr"><b>First Diagonosis Normal Range</b></label>
+        <input type="text" class="form-control" id="diag1Nr" formControlName="diag1Nr">
+      
+      </div>
+
+      <div class="col-lg-6">
+            <label for="diag2Av"><b>Second Diagonosis Actual Range</b></label>
+            <input type="text" class="form-control" id="diag2Av" formControlName="diag2Av">
+            
+     </div>
+
+     <div class="col-lg-6">
+            <label for="diag2Nr"><b>Second Diagonosis Normal Range </b></label>
+            <input type="text" class="form-control" id="diag2Nr" formControlName="diag2Nr">
+            
+    </div>
+
+    <div class="col-lg-6">
+            <label for="diag3Av"> <b>Third Diagonosis Actual Value</b></label>
+            <input type="text" class="form-control" id="diag3Av" formControlName="diag3Av">
+            
+    </div>
+
+    <div class="col-lg-6">
+            <label for="diag3Nr"><b>Third Diagonosis Normal Range</b></label>
+            <input type="text" class="form-control" id="diag3Nr" formControlName="diag3Nr">
+           
+    </div>
+
+    <div class="col-lg-6">
+            <label for="doctorComments"><b>Doctor's Comment : </b></label>
+            <input type="text" class="form-control" id="doctorComments" formControlName="doctorComments">
+           
+    </div>
+      
+    <div class="col-lg-6">
+            <label for="otherInfo"><b>Additional Information : </b></label>
+            <input type="text" class="form-control" id="otherInfo" formControlName="otherInfo">
+           
+    </div>
+  
+  
+
+  
+    </div>
+  
+    <br>
+    <div class="row">
+      <div class="col-lg-1">
+        <button type="submit" value="Save" class="btn add-to-cart float-left">Go Back</button>
+      </div>
+    </div>
+  </form>
+  <br><br><br>

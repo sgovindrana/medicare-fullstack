@@ -1,0 +1,41 @@
+<div class="container d-flex justify-content-center">
+        <div class="col-md-5 mt-5">
+          <h2> Doctor List</h2>
+          <div class="alert alert-success" *ngIf="remove">
+            Doctor validated Successfully  !
+          </div> 
+      
+          <div class="alert alert-danger" *ngIf="empty">
+            No doctor in the list. !
+          </div>
+          <div class="list-group" *ngIf="!empty">
+            <div class="list-group-item" *ngFor="let request of doctortList">
+              <div class="">
+                <div><b>Doctor ID : </b>{{request.doctorId}}</div><br>  
+                <div><b>Doctor Name : </b>{{request.firstName}} &ensp; {{request.lastName}}</div><br>
+                <div><b>age  : </b> {{request.age}}</div>
+                <div><b>Gender : </b> {{request.gender}}</div>
+              </div>
+              <br>
+     
+              <div>
+
+                <span class="float-right">
+                     <button type="button"  class="btn add-to-cart mt-2 ml-auto">
+                      <a (click)="onValidateDoctor(request.doctorId)"> Validate Doctor &ensp;  <i class="material-icons">done_all</i></a>
+                </button>
+                </span> 
+    
+               <span  *ngIf="!request.status" class="float-left">
+                  <button type="button" class="btn add-to-cart mt-2 ml-auto">
+                    <i class="material-icons">error</i>Not Valid
+                  </button>
+                </span>
+                </div>
+            </div>
+    
+          </div>
+        </div>
+    
+      </div>
+      <br><br><br>

@@ -1,0 +1,66 @@
+<div class="container d-flex justify-content-center">
+    <div class="col-md-5 mt-5">
+      <h2>Appointment Request</h2>
+   <!--   <div class="alert alert-success" *ngIf="remove">
+        Item Removed from Cart Successfully
+      </div> -->
+  
+      <div class="alert alert-danger" *ngIf="empty">
+        No Medicare Request Generated. Please add one !.
+      </div>
+      <div class="list-group" *ngIf="!empty">
+        <div class="list-group-item" *ngFor="let request of medicalTestHistory">
+            <div class=" col-lg-12 alert  alert-success" *ngIf="request.diag1Av == null  && request.status && this.medicareService.isDoctor == true"> Patient check pending. Please click on check. </div>
+            <div class=" col-lg-12 alert  alert-success" *ngIf="request.diag1Av == null  && !request.status  && this.medicareService.isDoctor == true"> Please approve patient to make check. </div>
+          <div class="">
+            <div><b>Hospital Name : </b>{{request.reqDoctorId.hospitalName}}</div><br>
+            <div><b>Medicare Service : </b> {{request.reqDoctorId.medicareService.medicareService}}</div>
+            <div><b>Amount</b> &#8377; {{request.reqDoctorId.medicareService.amount}}</div>
+          </div>
+          <br>
+          <div  *ngIf=" this.medicareService.isDoctor == true">
+              <div><b>Patient Name : </b>{{request.reqPatientId.firstName}}&ensp; {{request.reqPatientId.lastName}}</div>
+            
+          <div>
+                <span class="float-left">
+                     <b> Patient age : </b>{{request.reqPatientId.age}}
+                </span>
+                <span class="float-right">
+                   <b> Patient gender : </b>{{request.reqPatientId.gender}}
+                </span>
+          </div>
+
+          </div>   <br><br>
+          <div>
+
+            <span class="float-left" *ngIf="request.status">
+              <button type="button"  class="btn add-to-cart mt-2 ml-auto">
+              Status: Accepted &ensp;  <i class="material-icons">done_all</i>
+         </button>
+         </span> 
+        
+         <span class="float-left" *ngIf="!request.status">
+          <button type="button"  class="btn add-to-cart mt-2 ml-auto">
+          Status: Waiting For Approval &ensp;  <i class="material-icons">voice_over_off</i>
+     </button>
+     </span>  
+          <span class="float-right"  *ngIf="request.status">
+              <button [routerLink]="['/view-report',request.id]" type="button" class="btn add-to-cart mt-2 ml-auto">
+               View Report &ensp;  <i class="material-icons">chrome_reader_mode</i>
+              </button>
+            </span>
+          </div>
+<div>
+           <span  *ngIf=" this.medicareService.isDoctor == true  && request.status " class="float-left">
+              <button [routerLink]="['/edit-request',request.id]" type="button" class="btn add-to-cart mt-2 ml-auto">
+                <i class="material-icons">edit</i>Check
+              </button>
+            </span>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <br><br><br>

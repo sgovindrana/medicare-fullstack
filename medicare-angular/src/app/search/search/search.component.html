@@ -1,0 +1,30 @@
+  <div class="image-holder jumbotron" style="background-color: #222; text-align: center; padding: 100px 0;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <h1 class="smooth-font" style="font-size: 48px; font-weight: bold; color: #fff; text-transform: uppercase;">
+            Find Medicare Services
+          </h1>
+          <div class="input-group mt-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="background-color: #007ACC; color: #fff;">
+                <i class="material-icons">search</i>
+              </span>
+            </div>
+            <input class="form-control smooth-font" type="text" placeholder="Search" name="search-bar" [(ngModel)]="searchKey" (input)="search()">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button">Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-medicare-service-menu></app-medicare-service-menu>
+  
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "785f229e-ae58-46d2-8ae0-ae0b27293d48",
+		"name": "Medicare Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Medicare",
+			"item": [
+				{
+					"name": "Get Doctor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8052/medicare/doctor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8052",
+							"path": [
+								"medicare",
+								"doctor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Patient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8052/medicare/patient/vvv@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8052",
+							"path": [
+								"medicare",
+								"patient",
+								"vvv@gmail.com"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Patient by Username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Doctor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"doctorId\": \"d1033\",\r\n    \"firstName\": \"Tibly\",\r\n    \"lastname\": \"Fiser\",\r\n    \"age\": 42,\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"08/03/2000\",\r\n    \"contact\": 222,\r\n    \"altContact\": 333,\r\n    \"email\": \"raza@gmail.com\",\r\n    \"password\": \"raza11\",\r\n    \"address1\": \"MG road\",\r\n    \"address2\": \"Behind MG Hospital\",\r\n    \"city\": \"Pune\",\r\n    \"zip\": \"411057\",\r\n    \"degree\": \"MBBS\",\r\n    \"speciality\": \"Neuro Suergon\",\r\n    \"workhours\": 4,\r\n    \"hospitalName\": \"Mai Mangeshkar\",\r\n    \"medicareServiceId\": 4,\r\n    \"status\": true,\r\n    \"medicareService\": {\r\n        \"id\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8052/users/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8052",
+							"path": [
+								"users",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminId\": \"mm1010\",\r\n    \"firstName\": \"raza\",\r\n    \"lastname\": \"bhai\",\r\n    \"age\": 22,\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"08/03/2000\",\r\n    \"contact\": 222,\r\n    \"altContact\": \"111\",\r\n    \"email\": \"raza@gmail.com\",\r\n    \"password\": \"raza11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8052/users/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8052",
+							"path": [
+								"users",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Patient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patientId\": \"pp777\",\r\n    \"firstName\": \"kljh\",\r\n    \"lastName\": \"zxcv\",\r\n    \"age\": 28,\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"08/03/2000\",\r\n    \"contact\": 222,\r\n    \"altContact\": 111,\r\n    \"email\": \"raza@gmail.com\",\r\n    \"password\": \"pp776\",\r\n    \"address1\": \"MG road\",\r\n    \"address2\": \"Behind MG Hospital\",\r\n    \"city\": \"Pune\",\r\n    \"state\": \"MH\",\r\n    \"zip\": 411057,\r\n    \"valid\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8052/users/patient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8052",
+							"path": [
+								"users",
+								"patient"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "check pass",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1111",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "P1011",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "mm1010",
+								"value": "$2a$10$qGInotEWKg9R65SluUvdPO6Xn/jCq9n6ClVjl5apVO/vmVdkq3N3S",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8051/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8051",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,9 @@
+<div class="card-deck my-5">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-5" *ngFor="let items of doctorList">
+       
+       <app-medicare-service-info [medicareItem]="items" (bookAppointment)=" onbookAppointmentClick($event)"></app-medicare-service-info> 
+      </div>
+    </div>
+  </div>
+  

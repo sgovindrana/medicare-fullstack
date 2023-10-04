@@ -1,0 +1,166 @@
+<div class="container d-flex justify-content-center">
+	<div class="col-md-6 mt-6">
+		<div class="card mt-5">
+			<!-- FORM -->
+			<form class="m-3" [formGroup]="signUpForm" (submit)="addPatient()">
+				<div class="row">
+					<h2 class="col-lg-12 mb-4">Patient Sign Up</h2>
+					<div class="col-lg-11 alert alert-danger mx-3" *ngIf="userCreated == false">
+						{{this.error}}
+					</div>
+					<div class="col-lg-11 alert alert-success mx-3" *ngIf="userCreated == true">
+						{{this.error}}
+					</div>
+					<div class="col-lg-12">
+						Patient ID
+						<input type="text" class="col-lg-6 form-control mb-2 mr-sm-2" placeholder="Enter Patient Id "
+							formControlName="patientId" id="patientId">
+						<div class="text-danger"
+							*ngIf="patientId.invalid && patientId.errors.required && patientId.touched">Patient ID is
+							required</div>
+					</div>
+<!-- ******************************** -->
+					<div class="col-lg-6">
+						Firstname
+						<input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter First Name"
+							formControlName="firstName" id="firstName">
+						<div class="text-danger"
+							*ngIf="firstName.invalid && firstName.errors.required && firstName.touched">First Name is
+							required</div>
+					</div>
+
+					<div class="col-lg-6">
+						Lastname
+						<input type="text" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter Last Name"
+							formControlName="lastName" id="lastName" />
+						<div class="text-danger"
+							*ngIf="lastName.invalid && lastName.errors.required && lastName.touched">Last Name is
+							required</div>
+					</div>
+<!-- ******************************** -->
+                    <div class="col-lg-6">
+						Age
+						<input type="text" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter Age"
+							formControlName="age" id="age" />
+						<div class="text-danger"
+							*ngIf="age.invalid && age.errors.required && age.touched">Age is
+							required</div>
+					</div>
+
+                    <div class="col-lg-6">
+						Gender
+						<input type="text" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter Gender"
+							formControlName="gender" id="gender" />
+						<div class="text-danger"
+							*ngIf="gender.invalid && gender.errors.required && gender.touched">Gender is
+							required</div>
+					</div>
+<!-- ******************************** -->
+                    <div class="col-lg-6">
+						Date of Birth
+						<input type="text" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter date of brith"
+							formControlName="dateOfBirth" id="dateOfBirth" />
+						<div class="text-danger"
+							*ngIf="dateOfBirth.invalid && dateOfBirth.errors.required && dateOfBirth.touched">Date of Birth is
+							required</div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+						Contact Number
+						<input type="text" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter contact number"
+							formControlName="contact" id="contact" />
+						<div class="text-danger"
+							*ngIf="contact.invalid && contact.errors.required && contact.touched">Contact number is
+							required</div>
+                    </div>
+<!-- ******************************** -->
+                    <div class="col-lg-6">
+						Alternate Contact Number
+						<input type="text" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter alternate contact number"
+							formControlName="altContact" id="altContact" />
+                    </div>
+
+                    <div class="col-lg-6">
+						Email
+						<input type="text" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter email"
+							formControlName="email" id="email" />
+						<div class="text-danger"
+							*ngIf="email.invalid && email.errors.required && email.touched">Email is
+							required</div>
+                    </div>
+<!-- ******************************** -->
+                    <div class="col-lg-6">
+						Address line 1
+						<input type="text" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter Address"
+							formControlName="address1" id="address1" />
+						<div class="text-danger"
+							*ngIf="address1.invalid && address1.errors.required && address1.touched">Address is
+							required</div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+						Address line 2
+						<input type="text" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter Address"
+							formControlName="address2" id="address2" />
+                        
+                    </div>
+<!-- ******************************** -->
+                    <div class="col-lg-6">
+						City
+						<input type="text" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter City"
+							formControlName="city" id="city" />
+						<div class="text-danger"
+							*ngIf="city.invalid && city.errors.required && city.touched">City is
+							required</div>
+					</div>
+					
+					<div class="col-lg-6">
+						State
+						<input type="text" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter State"
+							formControlName="state" id="state" />
+						<div class="text-danger"
+							*ngIf="state.invalid && state.errors.required && state.touched">State is
+							required</div>
+                    </div>
+<!-- ******************************** -->
+
+                    <div class="col-lg-6">
+						ZIP Code
+						<input type="text" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter contact number"
+							formControlName="zip" id="zip" />
+						<div class="text-danger"
+							*ngIf="zip.invalid && zip.errors.required && zip.touched">ZIP Code is
+							required</div>
+                    </div>
+
+
+				<div class="col-lg-6">
+					Password
+					<input type="password" class="form-control mb-2 mr-sm-2" placeholder="Enter password"
+					formControlName="password" id="password">
+					<div class="text-danger"
+					*ngIf="password.invalid && password.errors.required && password.touched">Password is
+					required</div>
+				</div>
+<!-- ******************************** -->
+					<div class="col-lg-6">
+						Confirm Password
+						<input type="password" class="form-control mb-2 mr-sm-2" placeholder="Enter Confirm Password"
+							formControlName="confirmPassword" id="confirmPassword">
+						<div class="text-danger"
+							*ngIf="confirmPassword.invalid && confirmPassword.errors.required && confirmPassword.touched">
+							Confirm the Password</div>
+						<div class="text-danger" *ngIf="signUpForm.get('confirmPassword').hasError('nomatch')">Password
+							and Confirm Password do not match</div>
+					</div>
+<!-- ******************************** -->
+					<div class="col-lg-12 mt-3">
+						<button type="submit" class="btn add-to-cart float-left" [disabled]="!signUpForm.valid">Sign
+							Up</button>
+							<br><br><br><br>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

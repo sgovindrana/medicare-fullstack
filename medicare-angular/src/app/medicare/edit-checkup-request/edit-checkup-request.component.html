@@ -1,0 +1,77 @@
+<form [formGroup]="this.itemForm" (submit)="onSubmit()">
+        <div class="form-row">
+          <h2 class="col-lg-12"> <b>Patient Report</b></h2>
+          <div class=" col-lg-12 alert  alert-success" *ngIf="saveDone"> Menu Details Modified Successfully. </div>
+          <div class="col-lg-6 mb-2">
+            <label for="title"><b>Test Result Date : </b></label>
+            <input type="text" class="form-control" id="testResultDate" formControlName="testResultDate">
+            <div class="text-danger" *ngIf="testResultDate.invalid && testResultDate.errors.required"> Test result date is required</div>
+          </div>
+      
+          <div class="col-lg-6 mb-2">
+          <label for="title"><b>Service Date : </b></label>
+          <input type="text" class="form-control" id="serviceDate" formControlName="serviceDate">
+          <div class="text-danger" *ngIf="serviceDate.invalid && serviceDate.errors.required"> Service date is required</div>
+          </div>
+      
+          <div class="col-lg-6 col-md-6">
+            <label for="diag1Av"><b>First Diagonosis Actual Value </b></label>
+            <input type="text" class="form-control" id="diag1Av" formControlName="diag1Av">
+            <div class="text-danger" *ngIf="diag1Av.invalid && diag1Av.errors.required"> Diagonosis field is required</div>
+          </div>
+      
+         
+          <div class="col-lg-6">
+            <label for="diag1Nr"><b>First Diagonosis Normal Range</b></label>
+            <input type="text" class="form-control" id="diag1Nr" formControlName="diag1Nr">
+            <div class="text-danger" *ngIf="diag1Nr.invalid && diag1Nr.errors.required"> Diagonosis field is required</div>
+          </div>
+
+          <div class="col-lg-6">
+                <label for="diag2Av"><b>Second Diagonosis Actual Range</b></label>
+                <input type="text" class="form-control" id="diag2Av" formControlName="diag2Av">
+                <div class="text-danger" *ngIf="diag2Av.invalid && diag2Av.errors.required"> Diagonosis field is required</div>
+         </div>
+
+         <div class="col-lg-6">
+                <label for="diag2Nr"><b>Second Diagonosis Normal Range </b></label>
+                <input type="text" class="form-control" id="diag2Nr" formControlName="diag2Nr">
+                <div class="text-danger" *ngIf="diag2Nr.invalid && diag2Nr.errors.required"> Diagonosis field is required</div>
+        </div>
+
+        <div class="col-lg-6">
+                <label for="diag3Av"> <b>Third Diagonosis Actual Value</b></label>
+                <input type="text" class="form-control" id="diag3Av" formControlName="diag3Av">
+                <div class="text-danger" *ngIf="diag3Av.invalid && diag3Av.errors.required"> Diagonosis field is required</div>
+        </div>
+
+        <div class="col-lg-6">
+                <label for="diag3Nr"><b>Third Diagonosis Normal Range</b></label>
+                <input type="text" class="form-control" id="diag3Nr" formControlName="diag3Nr">
+                <div class="text-danger" *ngIf="diag3Nr.invalid && diag3Nr.errors.required"> Diagonosis field is required</div>
+        </div>
+
+        <div class="col-lg-6">
+                <label for="doctorComments"><b>Doctor's Comment : </b></label>
+                <input type="text" class="form-control" id="doctorComments" formControlName="doctorComments">
+                <div class="text-danger" *ngIf="doctorComments.invalid && doctorComments.errors.required"> Diagonosis field is required</div>
+        </div>
+          
+        <div class="col-lg-6">
+                <label for="otherInfo"><b>Additional Information : </b></label>
+                <input type="text" class="form-control" id="otherInfo" formControlName="otherInfo">
+                <div class="text-danger" *ngIf="otherInfo.invalid && otherInfo.errors.required"> Diagonosis field is required</div>
+        </div>
+      
+      
+
+      
+        </div>
+      
+        <br>
+        <div class="row">
+          <div class="col-lg-1">
+            <button type="submit" value="Save" class="btn add-to-cart float-left">Save</button>
+          </div>
+        </div>
+      </form>

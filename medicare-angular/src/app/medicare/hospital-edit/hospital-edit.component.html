@@ -1,0 +1,63 @@
+<form [formGroup]="this.itemForm" (submit)="onSubmit()">
+        <div class="form-row">
+          <h2 class="col-lg-12"> <b>Doctor and Medicare Services</b></h2>
+          <div class=" col-lg-12 alert  alert-success" *ngIf="saveDone">Details Modified Successfully. </div>
+          <div class="col-lg-6 mb-2">
+            <label for="title"><b>Doctor Firstname : </b></label>
+            <input type="text" class="form-control" id="firstName" formControlName="firstName">
+            <div class="text-danger" *ngIf="firstName.invalid && firstName.errors.required"> This field is required</div>
+          </div>
+      
+          <div class="col-lg-6 mb-2">
+          <label for="title"><b>Doctor Lastname : </b></label>
+          <input type="text" class="form-control" id="lastName" formControlName="lastName">
+          <div class="text-danger" *ngIf="lastName.invalid && lastName.errors.required"> This field is required</div>
+          </div>
+      
+          <div class="col-lg-6 col-md-6">
+            <label for="contact"><b>Doctor Contact Number : </b></label>
+            <input type="text" class="form-control" id="contact" formControlName="contact">
+            <div class="text-danger" *ngIf="contact.invalid && contact.errors.required"> Contact name is required</div>
+          </div>
+      
+         
+          <div class="col-lg-6">
+            <label for="email"><b>Doctor Email : </b></label>
+            <input type="text" class="form-control" id="email" formControlName="email">
+            <div class="text-danger" *ngIf="email.invalid && email.errors.required"> Email address is required</div>
+          </div>
+
+          <div class="col-lg-6">
+                <label for="degree"><b>Doctor Degree : </b></label>
+                <input type="text" class="form-control" id="degree" formControlName="degree">
+                <div class="text-danger" *ngIf="degree.invalid && degree.errors.required"> This field is required</div>
+         </div>
+
+         <div class="col-lg-6">
+                <label for="mymedicareService"><b>Medical Service : </b></label>
+                <input type="text" class="form-control" id="mymedicareService" formControlName="mymedicareService">
+                <div class="text-danger" *ngIf="mymedicareService.invalid && mymedicareService.errors.required"> Medicare Service field is required</div>
+        </div>
+
+        <div class="col-lg-6">
+                <label for="serviceDescription"> <b> Medicare Service Description : </b></label>
+                <input type="text" class="form-control" id="serviceDescription" formControlName="serviceDescription">
+                <div class="text-danger" *ngIf="serviceDescription.invalid && serviceDescription.errors.required"> Medicare service Description is required</div>
+        </div>
+
+        <div class="col-lg-6">
+                <label for="amount"><b>Medicare Service Amount : </b></label>
+                <input type="text" class="form-control" id="amount" formControlName="amount">
+                <div class="text-danger" *ngIf="amount.invalid && amount.errors.required"> Diagonosis field is required</div>
+        </div>
+      
+  
+        </div>
+      
+        <br>
+        <div class="row">
+          <div class="col-lg-1">
+            <button type="submit" value="Save" class="btn add-to-cart float-left">Save</button>
+          </div>
+        </div>
+      </form>  <br><br><br>

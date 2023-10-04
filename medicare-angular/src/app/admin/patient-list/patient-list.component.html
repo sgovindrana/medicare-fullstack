@@ -1,0 +1,47 @@
+<div class="container d-flex justify-content-center">
+        <div class="col-md-5 mt-5">
+          <h2> Patient List</h2>
+          <div class="alert alert-success" *ngIf="remove">
+            Patient validated Successfully  !
+          </div> 
+      
+          <div class="alert alert-danger" *ngIf="empty">
+            No patient in the list. !
+          </div>
+          <div class="list-group" *ngIf="!empty">
+            <div class="list-group-item" *ngFor="let request of patientList">
+              <div class="">
+                <div><b>Patient ID : </b>{{request.patientId}}</div><br>  
+                <div><b>Patient Name : </b>{{request.firstName}} &ensp; {{request.lastName}}</div><br>
+                <div><b>age  : </b> {{request.age}}</div>
+                <div><b>Gender : </b> {{request.gender}}</div>
+              </div>
+              <br>
+     
+              <div>
+    
+              <!-- <span class="float-right">
+                  <button [routerLink]="['/view-report',request.patientId]" type="button" class="btn add-to-cart mt-2 ml-auto">
+                   Validate Patient &ensp;  <i class="material-icons">done_all</i>
+                  </button>
+                </span> -->
+
+                <span class="float-right">
+                     <button type="button"  class="btn add-to-cart mt-2 ml-auto">
+                      <a (click)="onValidatePatient(request.patientId)"> Validate Patient &ensp;  <i class="material-icons">done_all</i></a>
+                </button>
+                </span> 
+    
+               <span  *ngIf="!request.valid" class="float-left">
+                  <button type="button" class="btn add-to-cart mt-2 ml-auto">
+                    <i class="material-icons">error</i>Not Valid
+                  </button>
+                </span>
+                </div>
+            </div>
+    
+          </div>
+        </div>
+    
+      </div>
+      <br><br><br>

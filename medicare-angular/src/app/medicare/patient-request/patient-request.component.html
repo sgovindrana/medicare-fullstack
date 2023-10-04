@@ -1,0 +1,53 @@
+<div class="container d-flex justify-content-center">
+        <div class="col-md-5 mt-5">
+          <h2> Patient Request List</h2>
+          <div class="alert alert-success" *ngIf="remove == 1 ">
+            Request Rejected Successfully  !
+          </div> 
+          <div class="alert alert-success" *ngIf="remove == 2 ">
+              Request Accepted Successfully  !
+            </div> 
+
+      
+          <div class="alert alert-danger" *ngIf="empty">
+            No Patient request. !
+          </div>
+          <div class="list-group" *ngIf="!empty">
+            <div class="list-group-item" *ngFor="let request of medicalTestHistory">
+               
+              <div class="">
+                <div><b>Patient ID : </b>{{request.reqPatientId.patientId}}</div><br>  
+                <div><b>Patient Name : </b>{{request.reqPatientId.firstName}} &ensp; {{request.reqPatientId.lastName}}</div><br>
+                <div><b>Patient age  : </b> {{request.reqPatientId.age}}</div>
+                <div><b>Patient Gender : </b> {{request.reqPatientId.gender}}</div>
+              </div>
+              <br>
+     
+              <div>
+
+                <span class="float-right" *ngIf="!request.status">
+                     <button type="button"  class="btn add-to-cart mt-2 ml-auto">
+                      <a (click)="onValidateRequest(request.id)"> Accept Request &ensp;  <i class="material-icons">done_all</i></a>
+                </button>
+                </span> 
+
+                <span class="float-right" *ngIf="request.status">
+                  <button type="button"  class="btn add-to-cart mt-2 ml-auto">
+                  Status: Accepted &ensp;  <i class="material-icons">done_all</i>
+             </button>
+             </span> 
+
+                <span class="float-left">
+                    <button type="button"  class="btn add-to-cart mt-2 ml-auto">
+                     <a (click)="onDeleteRequest(request.id)"> Reject Request &ensp;   <i class="material-icons">error</i></a>
+               </button>
+               </span> 
+    
+                </div>
+            </div>
+    
+          </div>
+        </div>
+    
+      </div>
+      <br><br><br>
